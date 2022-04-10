@@ -10,7 +10,23 @@ const tutorials = [
   'what is the difference between event capturing and bubbling?',
   'what is JSONP?'
 ];
+let names = [];
+let name2;
+
+let arr = []
 
 const titleCased = () => {
-  return tutorials
+  tutorials.forEach(tutorial => {
+    names.push(tutorial.split(" "))
+  })
+  
+  for(let line of names){
+    for(let i = 0; i < line.length; i++){
+      line[i] = line[i].charAt(0).toUpperCase() + line[i].slice(1);
+    }
+    arr.push(line.join(" "))
+  }
+
+
+  return arr;
 }
